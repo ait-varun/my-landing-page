@@ -130,19 +130,25 @@ export default function Home() {
   return (
     <>
       <section className="section min-h-screen flex flex-col items-center justify-center font-mono px-4 text-center">
-        <span className="big-text text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2">
-          Hello, I&apos;m Varun
-        </span>
-        <div className="block sm:flex items-center">
-          <div
-            className="big-text text-3xl sm:text-4xl md:text-5xl font-extrabold"
-            id="typewriter">
-            |
-          </div>
-          <span className="big-text text-3xl sm:text-4xl md:text-5xl font-extrabold">
-            &nbsp;Developer
+        <div className="block sm:hidden">
+          <span className="big-text text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2">
+            Hello, I&apos;m Varun
           </span>
+          <div className="block sm:flex items-center">
+            <div
+              className="big-text text-3xl sm:text-4xl md:text-5xl font-extrabold"
+              id="typewriter">
+              |
+            </div>
+            <span className="big-text text-3xl sm:text-4xl md:text-5xl font-extrabold">
+              &nbsp;Developer
+            </span>
+          </div>
         </div>
+        <span className="big-text text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 hidden sm:block">
+          Hello, I&apos;m Varun <span id="typewriter">|</span>
+          <span>&nbsp;Developer</span>
+        </span>
       </section>
 
       <Marquee pauseOnHover className="py-4">
