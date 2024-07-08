@@ -65,7 +65,7 @@ export default function Home() {
       const colors = [
         "#ffffff",
         "#f0f0f0",
-        "#e0e0e0",
+        "#000000",
         "#d0d0d0",
         "#c0c0c0",
         "#000000",
@@ -75,14 +75,15 @@ export default function Home() {
 
     // Typing animation for education section
     gsap.to(".typing-text", {
-      duration: 2,
+      duration: 5,
       text: "Bachelor&apos;s Degree in Computer Science from XYZ University.",
       ease: "none",
       scrollTrigger: {
         trigger: "#education",
-        start: "top 80%",
-        end: "top 20%",
-        scrub: 0.8,
+        start: "top center",
+        end: "top top",
+        scrub: 1,
+        // markers: true,
       },
     });
 
@@ -114,7 +115,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: "#about",
           start: "top 80%",
-          end: "top top",
+          end: "top -10%",
           scrub: 1,
         },
       }
@@ -128,11 +129,11 @@ export default function Home() {
 
   return (
     <>
-      <header className="header flex items-center justify-center">
+      {/* <header className="header flex items-center justify-center">
         <h1 className="text-4xl font-bold">
           Welcome to Varun&apos;s Landing Page
         </h1>
-      </header>
+      </header> */}
       <section className="section min-h-screen flex items-center justify-center">
         <span className="big-text text-6xl font-extrabold">
           Hello, I&apos;m Varun &nbsp;
@@ -170,7 +171,7 @@ export default function Home() {
         </p>
       </section>
       <section
-        className="section min-h-screen flex flex-col items-center justify-center"
+        className="section min-h-screen flex flex-col items-center justify-center text-white"
         id="education">
         <h2 className="reveal-text text-3xl font-bold mb-4">Education</h2>
         <p className="typing-text text-xl"></p>
@@ -229,32 +230,35 @@ export default function Home() {
       <section
         className="section min-h-screen flex flex-col items-center justify-center"
         id="contact">
-        <h2 className="reveal-text text-3xl font-bold mb-4 text-white">
-          Contact
-        </h2>
-        <form className="reveal-text w-full max-w-md">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            className="w-full p-2 mb-4 border rounded"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="w-full p-2 mb-4 border rounded"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            className="w-full p-2 mb-4 border rounded h-32"></textarea>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
-            Send
-          </button>
-        </form>
+        <div className="border-2 border-white rounded-lg p-8 flex flex-col items-center justify-center">
+          {" "}
+          <h2 className="reveal-text text-3xl font-bold mb-4 text-white">
+            Contact
+          </h2>
+          <form className="reveal-text w-full max-w-md">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              className="w-full p-2 mb-4 border rounded"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="w-full p-2 mb-4 border rounded"
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              className="w-full p-2 mb-4 border rounded h-32"></textarea>
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+              Send
+            </button>
+          </form>
+        </div>
       </section>
     </>
   );
