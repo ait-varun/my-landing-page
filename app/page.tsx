@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Lenis from "lenis";
 import Image from "next/image";
-import Head from "next/head";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import Marquee from "react-fast-marquee";
@@ -19,6 +18,7 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
+
     // Define the skills for the typewriter effect
     const skills = ["Front End", "Web"];
 
@@ -40,7 +40,7 @@ export default function Home() {
             });
           },
         });
-        tl.to({}, { duration: 2 }); // Pause between words
+        tl.to({}, { duration: 3 }); // Pause between words
       });
 
       return tl;
@@ -138,7 +138,9 @@ export default function Home() {
         <span className="big-text text-6xl font-extrabold">
           Hello, I&apos;m Varun &nbsp;
         </span>
-        <div className="big-text text-6xl font-extrabold" id="typewriter"></div>
+        <div className="big-text text-6xl font-extrabold" id="typewriter">
+          |
+        </div>
         <span className="big-text text-6xl font-extrabold">
           &nbsp;Developer
         </span>
@@ -147,11 +149,12 @@ export default function Home() {
         {" "}
         <div>
           <div className="w-full">
-            <span className="text-3xl font-bold mx-40">Web Technologies</span>
-            <span className="text-3xl font-bold mx-40">Next.js</span>
-            <span className="text-3xl font-bold mx-40">React</span>
-            <span className="text-3xl font-bold mx-40">Vue</span>
-            <span className="text-3xl font-bold mx-40">Svelte</span>
+            <span className="text-3xl font-bold mx-28">Next.js</span>
+            <span className="text-3xl font-bold mx-28">React</span>
+            <span className="text-3xl font-bold mx-28">Nuxt.js</span>
+            <span className="text-3xl font-bold mx-28">Vue</span>
+            <span className="text-3xl font-bold mx-28">Svelte kit</span>
+            <span className="text-3xl font-bold mx-28">Svelte</span>
           </div>
         </div>
       </Marquee>
