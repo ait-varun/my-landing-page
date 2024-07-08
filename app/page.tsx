@@ -152,10 +152,12 @@ export default function Home() {
       </section>
 
       <Marquee pauseOnHover className="py-4">
-        <div className="font-mono flex space-x-8 md:space-x-44">
+        <div className="font-mono flex">
           {["Next.js", "React", "Nuxt.js", "Vue", "Svelte kit", "Svelte"].map(
             (tech) => (
-              <span key={tech} className="text-xl md:text-3xl font-bold">
+              <span
+                key={tech}
+                className="text-xl md:text-3xl font-bold mx-4 md:mx-24">
                 {tech}
               </span>
             )
