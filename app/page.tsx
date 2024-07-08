@@ -176,16 +176,16 @@ export default function Home() {
       <section
         className="section min-h-screen flex flex-col items-center justify-center text-white font-mono"
         id="education">
-        <h2 className="reveal-text text-3xl font-bold mb-4">Education</h2>
-        <p className="typing-text text-xl font-mono"></p>
+        <h2 className="reveal-text text-6xl font-bold mb-4">Education</h2>
+        <p className="typing-text text-4xl font-mono"></p>
         <div className="mt-8 space-y-4">
-          <p className="reveal-text text-lg font-mono">
+          <p className="reveal-text text-2xl font-mono">
             Master&apos;s in Web Development - ABC University (2020-2022)
           </p>
-          <p className="reveal-text text-lg font-mono">
+          <p className="reveal-text text-2xl font-mono">
             Certification in UI/UX Design - Design Institute (2019)
           </p>
-          <p className="reveal-text text-lg font-mono">
+          <p className="reveal-text text-2xl font-mono">
             Bachelor&apos;s in Computer Science - XYZ University (2016-2020)
           </p>
         </div>
@@ -193,7 +193,7 @@ export default function Home() {
       <section
         className="section min-h-screen flex flex-col items-center justify-evenly font-mono"
         id="projects">
-        <h2 className="reveal-text text-3xl font-bold mb-8">Projects</h2>
+        <h2 className="reveal-text text-6xl font-bold mb-8">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="project-card bg-white p-6 rounded-lg shadow-lg opacity-0">
             <Image
@@ -203,10 +203,8 @@ export default function Home() {
               height={300}
               className="mb-4 rounded"
             />
-            <h3 className="text-2xl font-bold font-mono mb-2">Project A</h3>
-            <p className="font-mono">
-              A responsive web application built with React and Next.js.
-            </p>
+            <h3 className="text-3xl font-bold mb-2">Project A</h3>
+            <p>A responsive web application built with React and Next.js.</p>
           </div>
           <div className="project-card bg-white p-6 rounded-lg shadow-lg opacity-0">
             <Image
@@ -216,23 +214,21 @@ export default function Home() {
               height={300}
               className="mb-4 rounded"
             />
-            <h3 className="text-2xl font-bold font-mono mb-2">Project B</h3>
-            <p className="font-mono">
-              An e-commerce platform developed using Vue.js and Nuxt.
-            </p>
+            <h3 className="text-3xl font-bold  mb-2">Project B</h3>
+            <p>An e-commerce platform developed using Vue.js and Nuxt.</p>
           </div>
         </div>
       </section>
       <section
         className="section min-h-screen flex flex-col items-center justify-center font-mono"
         id="experience">
-        <h2 className="reveal-text text-3xl font-extrabold mb-4">
+        <h2 className="reveal-text text-6xl font-extrabold mb-8">
           Work Experience
         </h2>
-        <p className="reveal-text text-xl">
+        <p className="reveal-text text-2xl">
           Senior Frontend Developer at TechCorp (2020-Present)
         </p>
-        <p className="reveal-text text-xl mt-4">
+        <p className="reveal-text text-2xl mt-4">
           Web Developer at InnoSoft (2018-2020)
         </p>
       </section>
