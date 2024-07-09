@@ -18,13 +18,13 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
+    lenis.on("scroll", ScrollTrigger.update);
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 800);
+    });
 
-    requestAnimationFrame(raf);
+    gsap.ticker.lagSmoothing(0);
 
     // Section color transitions
     const sections = document.querySelectorAll(".section");
