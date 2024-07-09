@@ -29,7 +29,7 @@ export default function About() {
 
   return (
     <section
-      className="section min-h-screen flex flex-col items-center justify-center px-4 text-center"
+      className="section min-h-dvh flex flex-col items-center justify-center px-4 text-center"
       id="about">
       <Image
         src="/fotor.jpg"
