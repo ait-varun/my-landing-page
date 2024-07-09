@@ -186,7 +186,7 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center font-mono px-4 text-center min-h-screen">
         <h1 className="type-heading">
           <span className="type-box"></span>
-          <span className="type-text">Hi, I&apos;m&nbsp;</span>
+          <span className="type-text">Hi,I&apos;m&nbsp;</span>
           <span className="text"></span>
           <span className="cursor">_</span>
         </h1>
