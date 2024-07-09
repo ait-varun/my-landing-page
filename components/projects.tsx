@@ -31,7 +31,7 @@ export default function Projects() {
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 w-full max-w-6xl">
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
           <Image
             src="https://picsum.photos/400/300?random=1"
             alt="Project A"
@@ -44,7 +44,7 @@ export default function Projects() {
             A responsive web application built with React and Next.js.
           </p>
         </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg  opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
           <Image
             src="https://picsum.photos/400/300?random=2"
             alt="Project B"
@@ -57,7 +57,7 @@ export default function Projects() {
             An e-commerce platform developed using Vue.js and Nuxt.
           </p>
         </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
           <Image
             src="https://picsum.photos/400/300?random=3"
             alt="Project A"
@@ -83,7 +83,7 @@ export default function Projects() {
             A html template for a new website.
           </p>
         </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
           <Image
             src="https://picsum.photos/400/300?random=5"
             alt="Project B"
@@ -96,15 +96,17 @@ export default function Projects() {
             A news website for a local newspaper.
           </p>
         </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
           <Image
             src="https://picsum.photos/400/300?random=6"
             alt="Project B"
             width={400}
             height={300}
-            className="mb-4 rounded w-full h-48 object-cover"
+            className="mb-4 rounded w-full h-48 object-cover "
           />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project F</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-2 transition-colors duration-300 ease-in-out hover:text-blue-600">
+            Project F
+          </h3>
           <p className="text-sm md:text-base">
             A blog website for a local newspaper.
           </p>
