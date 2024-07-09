@@ -121,6 +121,60 @@ export default function Home() {
       }
     );
 
+    const words = ["Varun.", "a Musician.", "an Educator.", "a Developer."];
+
+    let cursor = gsap.to(".cursor", {
+      opacity: 0,
+      ease: "power2.inOut",
+      repeat: -1,
+    });
+
+    let boxTl = gsap.timeline();
+
+    boxTl
+      .to(".type-box", {
+        duration: 1,
+        width: "17vw",
+        delay: 0.5,
+        ease: "power4.inOut",
+      })
+      .fromTo(
+        ".type-text",
+        {
+          y: "7vw",
+          ease: "power3.out",
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          y: "0",
+          ease: "power3.out",
+          onComplete: () => {
+            masterTl.play();
+          },
+        }
+      )
+      .to(".type-box", {
+        duration: 1,
+        height: "7vw",
+        ease: "elastic.out",
+      })
+      .to(".type-box", {
+        duration: 2,
+        autoAlpha: 1,
+        yoyo: true,
+        repeat: -1,
+        ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
+      });
+
+    let masterTl = gsap.timeline({ repeat: -1 }).pause();
+
+    words.forEach((word) => {
+      let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+      tl.to(".text", { duration: 2, text: word });
+      masterTl.add(tl);
+    });
+
     return () => {
       lenis.destroy();
       typewriterAnimation.kill();
@@ -129,26 +183,13 @@ export default function Home() {
 
   return (
     <>
-      <section className="section min-h-screen flex flex-col items-center justify-center font-mono px-4 text-center">
-        <div className="block sm:hidden">
-          <span className="big-text text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2">
-            Hello, I&apos;m Varun
-          </span>
-          <div className="block sm:flex items-center">
-            <div
-              className="big-text text-3xl sm:text-4xl md:text-5xl font-extrabold"
-              id="typewriter">
-              |
-            </div>
-            <span className="big-text text-3xl sm:text-4xl md:text-5xl font-extrabold">
-              &nbsp;Developer
-            </span>
-          </div>
-        </div>
-        <span className="big-text text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 hidden sm:block">
-          Hello, I&apos;m Varun <span id="typewriter">|</span>
-          <span>&nbsp;Developer</span>
-        </span>
+      <section className="flex flex-col items-center justify-center font-mono px-4 text-center min-h-screen">
+        <h1 className="type-heading">
+          <span className="type-box"></span>
+          <span className="type-text">Hi, I&apos;m&nbsp;</span>
+          <span className="text"></span>
+          <span className="cursor">_</span>
+        </h1>
       </section>
 
       <Marquee pauseOnHover className="py-4">

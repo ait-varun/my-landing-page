@@ -8,6 +8,36 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* .type-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */
+.type-heading {
+  position: relative;
+  font-size: 6vw;
+  font-weight: bold;
+  overflow: hidden;
+}
+.type-heading .type-box {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  background: #2800ad;
+  height: 1vw !important;
+  z-index: -1;
+}
+.type-text {
+  opacity: 0;
+  display: inline-block;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
