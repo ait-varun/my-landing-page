@@ -30,7 +30,7 @@ export default function Projects() {
       <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-8">
         Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 w-full max-w-6xl">
         <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
           <Image
             src="https://picsum.photos/400/300?random=1"
@@ -81,6 +81,32 @@ export default function Projects() {
           <h3 className="text-2xl md:text-3xl font-bold mb-2">Project D</h3>
           <p className="text-sm md:text-base">
             A html template for a new website.
+          </p>
+        </div>
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+          <Image
+            src="https://picsum.photos/400/300?random=5"
+            alt="Project B"
+            width={400}
+            height={300}
+            className="mb-4 rounded w-full h-48 object-cover"
+          />
+          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project E</h3>
+          <p className="text-sm md:text-base">
+            A news website for a local newspaper.
+          </p>
+        </div>
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+          <Image
+            src="https://picsum.photos/400/300?random=6"
+            alt="Project B"
+            width={400}
+            height={300}
+            className="mb-4 rounded w-full h-48 object-cover"
+          />
+          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project F</h3>
+          <p className="text-sm md:text-base">
+            A blog website for a local newspaper.
           </p>
         </div>
       </div>
