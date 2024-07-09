@@ -17,7 +17,7 @@ export default function Header() {
     boxTl
       .to(".type-box", {
         duration: 1,
-        width: "20vw",
+        width: "22vw",
         delay: 0.5,
         ease: "power4.inOut",
       })
