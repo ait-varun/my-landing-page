@@ -57,6 +57,32 @@ export default function Projects() {
             An e-commerce platform developed using Vue.js and Nuxt.
           </p>
         </div>
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+          <Image
+            src="https://picsum.photos/400/300?random=3"
+            alt="Project A"
+            width={400}
+            height={300}
+            className="mb-4 rounded w-full h-48 object-cover"
+          />
+          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project C</h3>
+          <p className="text-sm md:text-base">
+            A landing page for a new startup.
+          </p>
+        </div>
+        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
+          <Image
+            src="https://picsum.photos/400/300?random=4"
+            alt="Project B"
+            width={400}
+            height={300}
+            className="mb-4 rounded w-full h-48 object-cover"
+          />
+          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project D</h3>
+          <p className="text-sm md:text-base">
+            A html template for a new website.
+          </p>
+        </div>
       </div>
     </section>
   );
