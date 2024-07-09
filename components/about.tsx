@@ -32,11 +32,11 @@ export default function About() {
       className="section min-h-screen flex flex-col items-center justify-center px-4 text-center"
       id="about">
       <Image
-        src="https://picsum.photos/300/300?random=1"
+        src="/fotor.jpg"
         alt="Varun"
         width={300}
         height={300}
-        className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-cover rounded-full"
+        className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
       />
       <p className="reveal-text text-lg md:text-2xl mt-4 font-mono">
         Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte,
