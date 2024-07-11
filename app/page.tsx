@@ -70,8 +70,8 @@ export default function Home() {
       <TechMarquee />
       <About />
       <Education />
-      <Projects />
       <Experience />
+      <Projects />
       <Contact />
     </>
   );

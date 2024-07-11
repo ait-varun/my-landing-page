@@ -7,10 +7,10 @@ export default function Experience() {
         Work Experience
       </h2>
       <p className="reveal-text text-lg md:text-2xl">
-        Senior Frontend Developer at TechCorp (2020-Present)
+        Web Developer In Analytic It Services (2023-Present)
       </p>
       <p className="reveal-text text-lg md:text-2xl mt-4">
-        Web Developer at InnoSoft (2018-2020)
+        Web Designer In Toxsl Technology Pvt. Ltd. (2022-2023) (Intern)
       </p>
     </section>
   );

@@ -1,8 +1,10 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { projectsData } from "@/data/data";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,87 +32,32 @@ export default function Projects() {
       <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-8">
         Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 w-full max-w-6xl">
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
-          <Image
-            src="https://picsum.photos/400/300?random=1"
-            alt="Project A"
-            width={400}
-            height={300}
-            className="mb-4 rounded w-full h-48 object-cover"
-          />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project A</h3>
-          <p className="text-sm md:text-base">
-            A responsive web application built with React and Next.js.
-          </p>
-        </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg  opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
-          <Image
-            src="https://picsum.photos/400/300?random=2"
-            alt="Project B"
-            width={400}
-            height={300}
-            className="mb-4 rounded w-full h-48 object-cover"
-          />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project B</h3>
-          <p className="text-sm md:text-base">
-            An e-commerce platform developed using Vue.js and Nuxt.
-          </p>
-        </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
-          <Image
-            src="https://picsum.photos/400/300?random=3"
-            alt="Project A"
-            width={400}
-            height={300}
-            className="mb-4 rounded w-full h-48 object-cover"
-          />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project C</h3>
-          <p className="text-sm md:text-base">
-            A landing page for a new startup.
-          </p>
-        </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0">
-          <Image
-            src="https://picsum.photos/400/300?random=4"
-            alt="Project B"
-            width={400}
-            height={300}
-            className="mb-4 rounded w-full h-48 object-cover"
-          />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project D</h3>
-          <p className="text-sm md:text-base">
-            A html template for a new website.
-          </p>
-        </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
-          <Image
-            src="https://picsum.photos/400/300?random=5"
-            alt="Project B"
-            width={400}
-            height={300}
-            className="mb-4 rounded w-full h-48 object-cover"
-          />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2">Project E</h3>
-          <p className="text-sm md:text-base">
-            A news website for a local newspaper.
-          </p>
-        </div>
-        <div className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-11o">
-          <Image
-            src="https://picsum.photos/400/300?random=6"
-            alt="Project B"
-            width={400}
-            height={300}
-            className="mb-4 rounded w-full h-48 object-cover "
-          />
-          <h3 className="text-2xl md:text-3xl font-bold mb-2 transition-colors duration-300 ease-in-out hover:text-blue-600">
-            Project F
-          </h3>
-          <p className="text-sm md:text-base">
-            A blog website for a local newspaper.
-          </p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 w-full max-w-6xl cursor-pointer">
+        {projectsData.map((project) => (
+          <div
+            key={project.id}
+            className="project-card bg-white p-4 md:p-6 rounded-lg shadow-lg opacity-0 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-110 cursor-pointer">
+            <Link href={project.url} target="_blank">
+              {" "}
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={300}
+                className="mb-4 rounded w-full h-48 object-cover"
+              />
+              <div className="flex flex-row justify-between items-start transition-colors duration-300 ease-in-out hover:text-blue-600">
+                {" "}
+                <h3 className="text-2xl font-bold mb-2 ">{project.title}</h3>
+                <h2 className="text-lg md:text-ellipsis flex items-center gap-2">
+                  <span>-</span>
+                  {project.frameWork}
+                </h2>
+              </div>
+              <p className="text-sm md:text-base">{project.description}</p>
+            </Link>
+          </div>
+        ))}
       </div>
     </section>
   );
