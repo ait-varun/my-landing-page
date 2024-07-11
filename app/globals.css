@@ -53,8 +53,8 @@
     -webkit-box-sizing:content-box;
     box-sizing:content-box;
   width: 0;
-  /* animation: typewriter 4s steps(44) 1s 1 normal both,
-    blinkTextCursor 500ms steps(44) infinite normal; */
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 900ms steps(44) infinite normal;
 }
 
 @keyframes typewriter {
@@ -68,7 +68,7 @@
 
 @keyframes blinkTextCursor {
   from {
-    border-right-color: rgba(0, 0, 0, 0.75);
+    border-right-color: rgb(255, 255, 255);
   }
   to {
     border-right-color: transparent;

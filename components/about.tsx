@@ -36,7 +36,7 @@ export default function About() {
       },
       {
         width: "100%",
-        borderRight: "2px solid rgb(255, 255, 255,0.01)",
+        borderRight: "2px solid transparent",
         ease: "steps(44)",
         duration: 3,
         scrollTrigger: {
