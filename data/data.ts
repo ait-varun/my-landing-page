@@ -47,7 +47,7 @@ export const projectsData = [
   {
     id: 6,
     title: "B&F",
-    url: "https://quick-billing.netlify.app/",
+    url: "#",
     frameWork: "Shopify",
     description: "A Pefume Store built with Shopify, Polaris & Php.",
     image: "/bf.png",
