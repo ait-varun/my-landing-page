@@ -67,9 +67,9 @@ export default function Home() {
     <>
       <Header />
       <About />
-      <Education />
-      <Projects />
       <Experience />
+      <Projects />
+      <Education />
       <Contact />
     </>
   );

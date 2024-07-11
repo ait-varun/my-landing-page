@@ -13,7 +13,7 @@ export default function Projects() {
     gsap.to(".project-card", {
       opacity: 1,
       y: 10,
-      stagger: 0.2,
+      stagger: 0.8,
       duration: 1,
       ease: "none",
       scrollTrigger: {
@@ -27,9 +27,9 @@ export default function Projects() {
 
   return (
     <section
-      className="section min-h-screen flex flex-col items-center justify-evenly font-mono px-4"
+      className="section min-h-screen flex flex-col items-center justify-evenly font-mono px-4 transition-all duration-600 ease-in-out"
       id="projects">
-      <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-8 text-white">
+      <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-8 text-white opacity-0 project-card">
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 w-full max-w-6xl cursor-pointer">

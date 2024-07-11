@@ -26,6 +26,26 @@ export default function About() {
         },
       }
     );
+
+    // Typewriter effect for Frontend Developer text
+    gsap.fromTo(
+      ".typeWriter-text",
+      {
+        width: "0",
+        borderRight: "2px solid rgb(255, 255, 255)",
+      },
+      {
+        width: "100%",
+        borderRight: "2px solid rgb(255, 255, 255,0.01)",
+        ease: "steps(44)",
+        duration: 3,
+        scrollTrigger: {
+          trigger: ".typeWriter-text",
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
   }, []);
 
   return (
@@ -42,7 +62,7 @@ export default function About() {
           height={300}
           className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
         />
-        <p className="reveal-text text-lg md:text-2xl mt-4 font-mono">
+        <p className="reveal-text text-lg md:text-2xl mt-4 font-mono typeWriter-text">
           Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte
           and SvelteKit.
         </p>
