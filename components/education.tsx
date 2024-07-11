@@ -10,7 +10,7 @@ export default function Education() {
   useEffect(() => {
     gsap.to(".typing-text", {
       duration: 5,
-      text: "Bachelor's Degree in Computer Science from XYZ University.",
+      text: "Bachelor's Degree in Electrical Engineering from Baddi University.",
       ease: "none",
       scrollTrigger: {
         trigger: "#education",
@@ -31,13 +31,8 @@ export default function Education() {
       <p className="typing-text text-2xl md:text-4xl font-mono"></p>
       <div className="mt-8 space-y-4">
         <p className="reveal-text text-lg md:text-2xl font-mono">
-          Master&apos;s in Web Development - ABC University (2020-2022)
-        </p>
-        <p className="reveal-text text-lg md:text-2xl font-mono">
-          Certification in UI/UX Design - Design Institute (2019)
-        </p>
-        <p className="reveal-text text-lg md:text-2xl font-mono">
-          Bachelor&apos;s in Computer Science - XYZ University (2016-2020)
+          Senior Secondary School Certification in Non-Medical from Gurukul
+          Public School (2011)
         </p>
       </div>
     </section>

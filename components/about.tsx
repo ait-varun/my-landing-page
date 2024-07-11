@@ -39,8 +39,8 @@ export default function About() {
         className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
       />
       <p className="reveal-text text-lg md:text-2xl mt-4 font-mono">
-        Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte,
-        and SvelteKit.
+        Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte and
+        SvelteKit.
       </p>
     </section>
   );
