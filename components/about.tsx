@@ -30,7 +30,7 @@ export default function About() {
 
   return (
     <section
-      className="section min-h-dvh flex flex-col items-center justify-evenly px-4 text-center text-white"
+      className="section min-h-screen flex flex-col items-center justify-evenly px-4 text-center text-white"
       id="about">
       <TechMarquee />
       <div className="flex flex-col items-center justify-center">
