@@ -24,7 +24,7 @@ export default function Education() {
     // Animation for the second text
     gsap.to(".secondary-school-text", {
       duration: 4,
-      text: "Senior Secondary School Certification in Non-Medical from Gurukul Public School (2011)",
+      text: "Senior Secondary School Certification in Non-Medical from Gurukul Public School",
       ease: "none",
       delay: 4,
       scrollTrigger: {
@@ -42,7 +42,7 @@ export default function Education() {
       <h2 className="education-title text-4xl md:text-6xl font-bold mb-4">
         Education
       </h2>
-      <p className="typing-text text-2xl md:text-4xl font-mono"></p>
+      <p className="typing-text text-lg md:text-2xl font-mono"></p>
       <div className="mt-8 space-y-4">
         <p className="secondary-school-text text-lg md:text-2xl font-mono"></p>
       </div>
