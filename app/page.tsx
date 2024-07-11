@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 
 import Header from "@/components/header";
-import TechMarquee from "@/components/techMarquee";
 import About from "@/components/about";
 import Education from "@/components/education";
 import Projects from "@/components/projects";
@@ -50,10 +49,10 @@ export default function Home() {
     function getColor(index: number) {
       const colors = [
         "#ffffff",
-        "#f0f0f0",
         "#000000",
         "#ffffff",
-        "#f0f0f0",
+        "#000000",
+        "#ffffff",
         "#000000",
       ];
       return colors[index % colors.length];
@@ -67,7 +66,6 @@ export default function Home() {
   return (
     <>
       <Header />
-      <TechMarquee />
       <About />
       <Education />
       <Projects />

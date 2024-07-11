@@ -23,7 +23,7 @@ export default function Education() {
 
   return (
     <section
-      className="section min-h-screen flex flex-col items-center justify-center text-white font-mono px-4 text-center"
+      className="section min-h-screen flex flex-col items-center justify-center text-black font-mono px-4 text-center"
       id="education">
       <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-4">
         Education

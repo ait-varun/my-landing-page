@@ -29,7 +29,7 @@ export default function Projects() {
     <section
       className="section min-h-screen flex flex-col items-center justify-evenly font-mono px-4"
       id="projects">
-      <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-8">
+      <h2 className="reveal-text text-4xl md:text-6xl font-bold mb-8 text-white">
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 w-full max-w-6xl cursor-pointer">

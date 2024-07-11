@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import TechMarquee from "./techMarquee";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,19 +30,23 @@ export default function About() {
 
   return (
     <section
-      className="section min-h-dvh flex flex-col items-center justify-center px-4 text-center"
+      className="section min-h-dvh flex flex-col items-center justify-evenly px-4 text-center text-white"
       id="about">
-      <Image
-        src="/fotor.jpg"
-        alt="Varun"
-        width={300}
-        height={300}
-        className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
-      />
-      <p className="reveal-text text-lg md:text-2xl mt-4 font-mono">
-        Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte and
-        SvelteKit.
-      </p>
+      <TechMarquee />
+      <div className="flex flex-col items-center justify-center">
+        {" "}
+        <Image
+          src="/fotor.jpg"
+          alt="Varun"
+          width={300}
+          height={300}
+          className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
+        />
+        <p className="reveal-text text-lg md:text-2xl mt-4 font-mono">
+          Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte
+          and SvelteKit.
+        </p>
+      </div>
     </section>
   );
 }
