@@ -5,7 +5,7 @@ export default function TechMarquee() {
   const technologies = [
     "Next.js",
     "React",
-    "Nuxt.js",
+    "Nuxt",
     "Vue",
     "Svelte kit",
     "Svelte",
