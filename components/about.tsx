@@ -54,7 +54,7 @@ export default function About() {
       ease: "none",
       scrollTrigger: {
         trigger: "#about",
-        start: "top center",
+        start: "top 90%",
         toggleActions: "play reset play reset",
       },
     });
