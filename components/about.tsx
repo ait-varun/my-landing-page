@@ -46,6 +46,18 @@ export default function About() {
         },
       }
     );
+
+    // Animation for the first text
+    gsap.to(".about-text", {
+      duration: 4,
+      text: "Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte & SvelteKit.",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top center",
+        toggleActions: "play none none none",
+      },
+    });
   }, []);
 
   return (
@@ -62,10 +74,11 @@ export default function About() {
           height={300}
           className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
         />
-        <p className="reveal-text text-lg md:text-2xl mt-4 font-mono typeWriter-text">
+        <p className="reveal-text text-lg md:text-2xl mt-4 font-mono typeWriter-text md:!block !hidden">
           Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte
           and SvelteKit.
         </p>
+        <p className="about-text text-lg md:text-2xl md:!hidden !block"></p>
       </div>
     </section>
   );
