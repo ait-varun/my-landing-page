@@ -42,7 +42,7 @@ export default function About() {
         scrollTrigger: {
           trigger: ".typeWriter-text",
           start: "top 90%",
-          toggleActions: "play none none none",
+          toggleActions: "play reset play reset",
         },
       }
     );
