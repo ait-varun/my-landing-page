@@ -4,7 +4,12 @@ import { gsap } from "gsap";
 
 export default function Header() {
   useEffect(() => {
-    const words = ["Varun.", "a Musician.", "an Educator.", "a Developer."];
+    const words = [
+      "Varun.",
+      "a Creator.",
+      "a Web Designer.",
+      "a Web Developer.",
+    ];
 
     let cursor = gsap.to(".cursor", {
       opacity: 0,

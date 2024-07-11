@@ -21,10 +21,17 @@ export default function Home() {
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
+      lenis.raf(time * 1500);
     });
 
     gsap.ticker.lagSmoothing(0);
+
+    // function raf(time: number) {
+    //   lenis.raf(time);
+    //   requestAnimationFrame(raf);
+    // }
+
+    // requestAnimationFrame(raf);
 
     // Section color transitions
     const sections = document.querySelectorAll(".section");
