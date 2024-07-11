@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 export default function Education() {
   useEffect(() => {
     // Animation for the first text
-    gsap.to(".typing-text", {
+    gsap.to(".degree-text", {
       duration: 4,
       text: "Bachelor's Degree in Electrical Engineering from Baddi University",
       ease: "none",
@@ -42,10 +42,8 @@ export default function Education() {
       <h2 className="education-title text-4xl md:text-6xl font-bold mb-4">
         Education
       </h2>
-      <p className="typing-text text-lg md:text-2xl font-mono"></p>
-      <div className="mt-8 space-y-4">
-        <p className="secondary-school-text text-lg md:text-2xl font-mono"></p>
-      </div>
+      <p className="degree-text text-lg md:text-2xl"></p>
+      <p className="secondary-school-text text-lg md:text-2xl mt-4"></p>
     </section>
   );
 }
