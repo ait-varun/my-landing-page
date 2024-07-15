@@ -11,6 +11,7 @@ import Education from "@/components/education";
 import Projects from "@/components/projects";
 import Experience from "@/components/experience";
 import Contact from "@/components/contact";
+import Customers from "@/components/customers";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -54,6 +55,7 @@ export default function Home() {
         "#000000",
         "#ffffff",
         "#000000",
+        "#ffffff",
       ];
       return colors[index % colors.length];
     }
@@ -71,6 +73,7 @@ export default function Home() {
       <Projects />
       <Education />
       <Contact />
+      <Customers />
     </>
   );
 }

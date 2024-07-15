@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -25,6 +26,7 @@ export default function Login() {
   });
 
   const { toast } = useToast();
+  const router = useRouter();
 
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -39,6 +41,7 @@ export default function Login() {
       });
       setServerError(null); // Clear any previous server error
       reset(); // Reset the form fields
+      router.push("/");
     } catch (error: any) {
       setServerError(error.response?.data?.message || "An error occurred");
     }
