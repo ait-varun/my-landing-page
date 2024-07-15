@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -23,28 +24,28 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
+  const { toast } = useToast();
+
   const [serverError, setServerError] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const onSubmit: SubmitHandler<LoginFormInputs> = async (data) => {
     try {
       const response = await axios.post("http://localhost:4000/login", data, {
-        // withCredentials: true, // Add this line if your API requires cookies
+        withCredentials: true, // Add this line if your API requires cookies
       });
-      setSuccessMessage("Login successful!");
+      toast({
+        title: "Login successful!",
+        description: "You are now logged in.",
+      });
       setServerError(null); // Clear any previous server error
       reset(); // Reset the form fields
     } catch (error: any) {
       setServerError(error.response?.data?.message || "An error occurred");
-      setSuccessMessage(null);
     }
   };
   return (
     <div className="max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6">Login</h2>
-      {successMessage && (
-        <p className="text-green-600 text-sm">{successMessage}</p>
-      )}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">

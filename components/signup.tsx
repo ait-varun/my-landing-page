@@ -5,6 +5,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { cookies } from "next/headers";
 
 const signupSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -26,13 +28,23 @@ export default function SignUp() {
 
   const [serverError, setServerError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const { toast } = useToast();
 
   const onSubmit: SubmitHandler<SignupFormInputs> = async (data) => {
     try {
-      const response = await axios.post("http://localhost:4000/signup", data, {
-        // withCredentials: true, // Add this line if your API requires cookies
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/signup`,
+        data,
+        {
+          withCredentials: true, // Add this line if your API requires cookies
+        }
+      );
+      if (response.status === 200 && response.data.message === "success") {
+      }
+      toast({
+        title: "Signup successful!",
+        description: "You can now login.",
       });
-      setSuccessMessage("Signup successful!");
       setServerError(null); // Clear any previous server error
       reset(); // Reset the form fields
     } catch (error: any) {
@@ -44,9 +56,6 @@ export default function SignUp() {
   return (
     <div className="max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
-      {successMessage && (
-        <p className="text-green-600 text-sm">{successMessage}</p>
-      )}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
