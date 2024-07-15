@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { Trash2 } from "lucide-react";
 
 interface CustomerResponse {
   totalCustomers: number;
@@ -43,6 +44,38 @@ export default function Customers() {
 
       const data: CustomerResponse = await res.json();
       setCustomerData(data.customers);
+    } catch (error) {
+      setError((error as Error).message);
+    }
+  };
+
+  const deleteCustomer = async (id: string) => {
+    const token = Cookies.get("token");
+    if (!token) {
+      setError("No authentication token available");
+      return;
+    }
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/customers/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error(`Failed to delete customer: ${res.statusText}`);
+      }
+
+      // Remove the deleted customer from the state
+      setCustomerData((prevData) =>
+        prevData ? prevData.filter((customer) => customer.id !== id) : null
+      );
     } catch (error) {
       setError((error as Error).message);
     }
@@ -98,8 +131,14 @@ export default function Customers() {
               {customerData.map((customer) => (
                 <li
                   key={customer.id}
-                  className="px-6 py-4 hover:bg-gray-50 transition duration-150 ease-in-out">
-                  {customer.name}
+                  className="px-6 py-4 hover:bg-gray-50 transition duration-150 ease-in-out flex justify-between items-center">
+                  <span>{customer.name}</span>
+                  <button
+                    onClick={() => deleteCustomer(customer.id)}
+                    className="text-red-500 hover:text-red-700 transition duration-150 ease-in-out"
+                    aria-label="Delete customer">
+                    <Trash2 size={20} />
+                  </button>
                 </li>
               ))}
             </ul>
