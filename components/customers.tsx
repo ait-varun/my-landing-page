@@ -36,6 +36,7 @@ interface AddCustomerForm {
 export default function Customers() {
   const [customerData, setCustomerData] = useState<Customer[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [addNewError, setAddNewError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const {
@@ -135,7 +136,11 @@ export default function Customers() {
       setIsOpen(false);
       reset();
     } catch (error) {
-      setError((error as Error).message);
+      setAddNewError((error as Error).message);
+
+      setTimeout(() => {
+        setAddNewError(null);
+      }, 5000);
     }
   };
 
@@ -199,6 +204,13 @@ export default function Customers() {
               <SheetFooter>
                 <Button type="submit">Add Customer</Button>
               </SheetFooter>
+              {addNewError && (
+                <div
+                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-6"
+                  role="alert">
+                  <span className="block sm:inline"> {addNewError}</span>
+                </div>
+              )}
             </form>
           </SheetContent>
         </Sheet>
@@ -237,6 +249,14 @@ export default function Customers() {
                   </button>
                 </li>
               ))}
+
+              {customerData.length === 0 && (
+                <div className="flex justify-center items-center h-full my-10">
+                  <h2 className="text-xl font-semibold my-4">
+                    No Customers Found
+                  </h2>
+                </div>
+              )}
             </ul>
           </div>
         )}
