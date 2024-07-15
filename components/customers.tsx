@@ -129,11 +129,8 @@ export default function Customers() {
         );
       }
 
-      const newCustomer: Customer = await res.json();
-      setCustomerData((prevData) =>
-        prevData ? [...prevData, newCustomer] : [newCustomer]
-      );
       setIsOpen(false);
+      getCustomers();
       reset();
     } catch (error) {
       setAddNewError((error as Error).message);
@@ -146,8 +143,7 @@ export default function Customers() {
 
   useEffect(() => {
     getCustomers();
-    customerData;
-  }, [customerData]);
+  }, []);
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
