@@ -16,6 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 interface CustomerResponse {
   totalCustomers: number;
@@ -54,19 +55,20 @@ export default function Customers() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/customers", {
+      const res = await axios.get("http://localhost:4000/customers", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        credentials: "include",
+        withCredentials: true, // Add this line if your API requires cookies
       });
 
-      if (!res.ok) {
-        throw new Error(`Failed to fetch customers: ${res.statusText}`);
+      if (res.status !== 200) {
+        throw new Error(`Failed to fetch customers: ${res.status}`);
       }
 
-      const data: CustomerResponse = await res.json();
+      const data: CustomerResponse = await res.data;
       setCustomerData(data.customers);
+      console.log(data);
     } catch (error) {
       setError((error as Error).message);
     }
@@ -80,19 +82,18 @@ export default function Customers() {
     }
 
     try {
-      const res = await fetch(
+      const res = await axios.delete(
         `${process.env.NEXT_PUBLIC_API_URL}/customers/delete/${id}`,
         {
-          method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          credentials: "include",
+          withCredentials: true, // Add this line if your API requires cookies
         }
       );
 
-      if (!res.ok) {
-        throw new Error(`Failed to delete customer: ${res.statusText}`);
+      if (res.status !== 200) {
+        throw new Error(`Failed to delete customer: ${res.status}`);
       }
 
       // Remove the deleted customer from the state
@@ -112,28 +113,27 @@ export default function Customers() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/customers/add", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify(data),
-      });
+      const res = await axios.post(
+        "http://localhost:4000/customers/add",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          withCredentials: true, // Add this line if your API requires cookies
+        }
+      );
 
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(
-          errorData.message || `Failed to add customer: ${res.statusText}`
-        );
+      if (res.status !== 201) {
+        throw new Error(`Failed to add customer: ${res.status}`);
       }
 
       setIsOpen(false);
       getCustomers();
       reset();
-    } catch (error) {
-      setAddNewError((error as Error).message);
+    } catch (error: any) {
+      setAddNewError(error.response?.data?.message);
 
       setTimeout(() => {
         setAddNewError(null);
