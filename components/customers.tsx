@@ -6,6 +6,7 @@ import { Trash2, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/use-toast";
 import {
   Sheet,
   SheetContent,
@@ -39,6 +40,7 @@ export default function Customers() {
   const [error, setError] = useState<string | null>(null);
   const [addNewError, setAddNewError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const { toast } = useToast();
 
   const {
     register,
@@ -100,6 +102,11 @@ export default function Customers() {
       setCustomerData((prevData) =>
         prevData ? prevData.filter((customer) => customer.id !== id) : null
       );
+
+      toast({
+        title: `${res.data.message}!`,
+        description: "Customer deleted successfully",
+      });
     } catch (error: any) {
       setError(error.response?.data?.message);
     }
@@ -125,6 +132,10 @@ export default function Customers() {
         }
       );
       setIsOpen(false);
+      toast({
+        title: `Added new customer: ${data.name}`,
+        description: "Customer added successfully",
+      });
       getCustomers();
       reset();
     } catch (error: any) {
