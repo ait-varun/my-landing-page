@@ -35,6 +35,9 @@ export default function Login() {
       const response = await axios.post("http://localhost:4000/login", data, {
         withCredentials: true, // Add this line if your API requires cookies
       });
+      if (response.status !== 200) {
+        throw new Error(`Failed to login: ${response.status}`);
+      }
       toast({
         title: response.data.message,
         description: "You are now logged in.",
