@@ -100,8 +100,8 @@ export default function Customers() {
       setCustomerData((prevData) =>
         prevData ? prevData.filter((customer) => customer.id !== id) : null
       );
-    } catch (error) {
-      setError((error as Error).message);
+    } catch (error: any) {
+      setError(error.response?.data?.message);
     }
   };
 
@@ -124,11 +124,6 @@ export default function Customers() {
           withCredentials: true, // Add this line if your API requires cookies
         }
       );
-
-      if (res.status !== 201) {
-        throw new Error(`Failed to add customer: ${res.status}`);
-      }
-
       setIsOpen(false);
       getCustomers();
       reset();
@@ -215,7 +210,7 @@ export default function Customers() {
       <main className="flex-grow p-4 overflow-auto">
         {error && (
           <div
-            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative my-4"
             role="alert">
             <strong className="font-bold">Error:</strong>
             <span className="block sm:inline"> {error}</span>
