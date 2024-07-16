@@ -40,12 +40,12 @@ export default function Contact() {
       // Uncomment the following line when you have an actual API endpoint
       // await axios.post('/api/contact', data);
 
+      reset();
       toast({
         title: "Success",
         description: "Your message has been sent successfully!",
       });
-      reset();
-      router.push("/thank-you");
+      // router.push("/thank-you");
     } catch (error) {
       toast({
         title: "Error",
