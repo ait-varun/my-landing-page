@@ -36,7 +36,7 @@ export default function Login() {
         withCredentials: true, // Add this line if your API requires cookies
       });
       toast({
-        title: "Login successful!",
+        title: response.data.message,
         description: "You are now logged in.",
       });
       setServerError(null); // Clear any previous server error
