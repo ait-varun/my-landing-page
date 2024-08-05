@@ -49,8 +49,13 @@ export default function About() {
 
     // Animation for the first text
     gsap.to(".about-text", {
-      duration: 4,
-      text: "Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte & SvelteKit.",
+      duration: 10,
+      text: ` “...if you always put limits on what you can do, physical or anything
+          else, it’ll spread over into the rest of your life. It’ll spread into
+          your work, into your morality, into your entire being. There are no
+          limits. There are plateaus, but you must not stay there, you must go
+          beyond them. If it kills you, it kills you. A man must constantly
+          exceed his level.”  ― Bruce Lee`,
       ease: "none",
       scrollTrigger: {
         trigger: "#about",
@@ -65,8 +70,7 @@ export default function About() {
       className="section min-h-screen flex flex-col items-center justify-evenly px-4 text-center text-white"
       id="about">
       <TechMarquee />
-      <div className="flex flex-col items-center justify-center">
-        {" "}
+      <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
         <Image
           src="/fotor.jpg"
           alt="Varun"
@@ -74,11 +78,8 @@ export default function About() {
           height={300}
           className="profile-image mb-8 w-60 h-60 md:w-96 md:h-96 object-none md:object-cover rounded-full"
         />
-        <p className="reveal-text text-lg md:text-2xl mt-4 font-mono typeWriter-text md:!block !hidden">
-          Frontend Developer specializing in Next.js, React, Nuxt, Vue, Svelte
-          and SvelteKit.
-        </p>
-        <p className="about-text text-lg md:text-2xl md:!hidden !block"></p>
+        <p className="quote-text text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-4 font-mono opacity-0"></p>
+        <p className="about-text text-lg md:text-2xl mt-4"></p>
       </div>
     </section>
   );
